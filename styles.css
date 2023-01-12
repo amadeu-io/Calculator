@@ -12,6 +12,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;   
+    background: gray;
 }
 
 /* calculator */
@@ -42,7 +43,7 @@ button { /* the dimensions of the whole calculator are set only with the size of
     height: 70px;
 }
 
-button.zero {
+#zero {
     width: auto;
     grid-column: span 2;
 }
