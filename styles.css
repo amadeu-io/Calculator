@@ -23,7 +23,7 @@ body {
     gap: 2px;
 }
 
-.display, .button {
+.display, button {
     background-color: rgb(219, 219, 219);
     border: 1px solid rgb(140, 140, 140); 
     border-radius: 3px;
@@ -37,17 +37,17 @@ body {
     align-items: center;
 }
 
-.button { /* the dimensions of the whole calculator are set only with the size of the buttons */
+button { /* the dimensions of the whole calculator are set only with the size of the buttons */
     width: 80px;
     height: 70px;
 }
 
-.button.zero {
+button.zero {
     width: auto;
     grid-column: span 2;
 }
 
-.button:hover {
+button:hover {
     background-color: rgb(159, 159, 159);
     cursor: pointer;
 }
