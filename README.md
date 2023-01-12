@@ -1,4 +1,4 @@
-Calculator web app ✖️
+Calculator web app ➗
 
 <a href='https://nightrunner4.github.io/Calculator'>👉 Click here to see</a>
 
