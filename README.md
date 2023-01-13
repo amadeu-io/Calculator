@@ -4,9 +4,13 @@ Calculator web app ➗
 
 Las project of the foundations of The Odin Project. This app is currently being developed.
 
+Currently, the calculator works well, but I think the code has a lot of room for
+optimisation.
+
 <b>Potential Improvements:</b> 💪
 
  - Keyboard support
+ - Optimise code
  - Style and make mobile compatible
 
 <b>Found Bugs:</b> 🪲
