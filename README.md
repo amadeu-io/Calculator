@@ -6,10 +6,11 @@ Las project of the foundations of The Odin Project. This app is currently being 
 
 <b>Potential Improvements:</b> 💪
 
+ - Keyboard compatible
  - Mobile compatible
 
 <b>Found Bugs:</b> 🪲
 
-- After = is pressed an result is on screen, user should be able to operate on that result.
+
 
 by nightrunner4

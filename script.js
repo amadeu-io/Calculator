@@ -39,7 +39,6 @@ function operate(operator, a, b) {
 }
 
 // initial conditions
-let inputSequence = [];
 let numberSequence = '';
 let a = 0;
 let end = false;
@@ -61,30 +60,35 @@ for (const number of numbers) {
             display.innerHTML = '0';
             operatorInput = '';
             numberSequence = '';
-            result = 0;
             a = 0;
+            result = 0;
             end = false;
         };
                 
         numberSequence += input;
         console.log(numberSequence);
-        display.innerHTML = numberSequence;
-
-        
+        display.innerHTML = numberSequence; 
     });
 };
 
 for (const operator of operators) {
     operator.addEventListener('click', function() {
         let input = event.target.innerHTML;
-        if (a) { // chains operations / && numberSequence != '' ??maybe
+
+        if (end) { // operator is pressed with result on screen
             let result = operate(operatorInput, a, numberSequence);
-            console.log('yess');
-            display.innerHTML = result;
             operatorInput = input;
             a = result;
+            display.innerHTML = operatorInput;
             numberSequence = '';
-        } else {  
+            end = false;
+        } else if (a) { // operator is pressed after num op num
+            operatorInput = input;
+            let result = operate(operatorInput, a, numberSequence);
+            display.innerHTML = result;
+            a = result;
+            numberSequence = '';
+        } else {  // operator is pressed after num
             operatorInput = input;
             a = numberSequence;
             display.innerHTML = operatorInput;
