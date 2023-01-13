@@ -1,25 +1,17 @@
 function adder(a, b) {
-    return +a + +b;
+    return parseFloat((+a + +b).toFixed(7));
 };
 
 function subtracter(a, b) {
-    return +a - +b;
+    return parseFloat((+a - +b).toFixed(7))
 };
 
 function multiplyer(a, b) {
-    return +a * +b;
+    return parseFloat((+a * +b).toFixed(7))
 };
 
 function divider(a, b) {
-    return (b == 0) ? '🫣 don\'t be naughty' : +a / +b;
-};
-
-function percenter(a) {
-    return +a / 100;
-};
-
-function changeSign(a) {
-    return +a * (-1);
+    return (b == 0) ? '🫣 don\'t be naughty' : parseFloat((+a / +b).toFixed(7));
 };
 
 function operate(operator, a, b) {
@@ -31,10 +23,6 @@ function operate(operator, a, b) {
         return multiplyer(a, b);
     } if (operator == '/') {
         return divider(a, b);
-    } if (operator == '%') {
-        return percenter(a);
-    } if (operator == '+ / -') {
-        return changeSign(a);
     };
 }
 
@@ -42,12 +30,19 @@ function operate(operator, a, b) {
 let numberSequence = '';
 let a = 0;
 let end = false;
+let operatorInput = '';
+let dotPressed = false;
+let storeResult = 0;
+let result = 0;
 
 const display = document.querySelector('.display');
 const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equals = document.getElementById('equals');
 const ac = document.getElementById('ac');
+const dot = document.getElementById('dot');
+const pm = document.getElementById('pm');
+const percent = document.getElementById('percent')
 
 let resultant = false;
 display.innerHTML = '0';
@@ -74,11 +69,11 @@ for (const number of numbers) {
 for (const operator of operators) {
     operator.addEventListener('click', function() {
         let input = event.target.innerHTML;
+        dotPressed = false;
 
-        if (end) { // operator is pressed with result on screen
-            let result = operate(operatorInput, a, numberSequence);
+        if (end) { // operator is pressed after result
             operatorInput = input;
-            a = result;
+            a = storeResult;
             display.innerHTML = operatorInput;
             numberSequence = '';
             end = false;
@@ -97,18 +92,61 @@ for (const operator of operators) {
     });
 };
 
+dot.addEventListener('click', function() {
+    if (!dotPressed) { // if dot is not pressed
+        numberSequence += '.';
+        console.log(numberSequence);
+        display.innerHTML = numberSequence;
+        dotPressed = true;
+    };
+});
+
+pm.addEventListener('click', function() {
+    if (end) { // operator is pressed after result
+        storeResult = -storeResult;
+        console.log(storeResult);
+        display.innerHTML = storeResult; 
+    } else {
+        numberSequence = -numberSequence;
+        console.log(numberSequence);
+        display.innerHTML = numberSequence; 
+    };
+});
+
+percent.addEventListener('click', function() {
+    if (end) { // operator is pressed after result
+        storeResult = storeResult / 100;
+        console.log(storeResult);
+        display.innerHTML = parseFloat((storeResult).toFixed(7)); 
+    } else {
+        numberSequence = numberSequence / 100;
+        console.log(numberSequence);
+        display.innerHTML = parseFloat((numberSequence).toFixed(7)); 
+    };
+
+})
+
 ac.addEventListener('click', function() {    
     display.innerHTML = '0';
     operatorInput = '';
     numberSequence = '';
     result = 0;
+    storeResult = 0;
     a = 0;
     end = false;
+    dotPressed = false;
+
 });
 
 equals.addEventListener('click', function() {
-    let result = operate(operatorInput, a, numberSequence);
-    console.log(result);
-    display.innerHTML = result;
-    end = true;
+    if (operatorInput == '') { // if = is pressed after an operator, do nothing
+        // do nothing
+    } else { // compute result only if there is an operator input
+        dotPressed = false;
+        let result = operate(operatorInput, a, numberSequence);
+        storeResult = result;
+        console.log(result);
+        display.innerHTML = result;
+        end = true;
+    }; 
 });

@@ -6,8 +6,8 @@ Las project of the foundations of The Odin Project. This app is currently being 
 
 <b>Potential Improvements:</b> 💪
 
- - Keyboard compatible
- - Mobile compatible
+ - Keyboard support
+ - Style and make mobile compatible
 
 <b>Found Bugs:</b> 🪲
 
