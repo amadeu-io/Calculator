@@ -77,7 +77,7 @@ for (const number of numbers) {
 for (const operator of operators) {
     operator.addEventListener('click', function() {
         let input = event.target.innerHTML;
-        if (a) { // && numberSequence != '' ??maybe
+        if (a) { // chains operations / && numberSequence != '' ??maybe
             let result = operate(operatorInput, a, numberSequence);
             console.log('yess');
             display.innerHTML = result;
