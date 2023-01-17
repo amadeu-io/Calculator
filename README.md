@@ -11,7 +11,7 @@ optimisation.
 
  - Keyboard support
  - Optimise code
- - Style and make mobile compatible
+ - Mobile compatibility
 
 <b>Found Bugs:</b> 🪲
 
