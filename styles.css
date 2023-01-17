@@ -3,6 +3,18 @@
 * {
     margin: 0;
     padding: 0;
+}   
+
+:root {
+    --border: 1px solid rgba(0, 0, 0, 0.1);
+    --char-color:  rgb(39, 39, 39);
+}
+
+button {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
@@ -11,45 +23,55 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;   
-    background: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--char-color);
+    background: rgb(130,255,145);
+    background: linear-gradient(144deg, rgba(130,255,145,1) 0%, rgba(107,230,255,1) 49%);   
 }
 
 /* calculator */
 
 .calculator {
+    width: 384px; /* size of the whole calculator is set with only this w & h thanks to grid */
+    height: 504px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    gap: 2px;
+    border-bottom: var(--border);
+    border-left: var(--border);
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
 }
+  
 
 .display, button {
-    background-color: rgb(219, 219, 219);
-    border: 1px solid rgb(140, 140, 140); 
-    border-radius: 3px;
+    border-top: var(--border);
+    border-right: var(--border);
 }
 
 .display { /* doesn't have dimensions because it stretches by default to take up all remaining space */
     grid-column-start: span 4;
-    font-size: 30px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px 10px 0px 0px;
 }
 
-button { /* the dimensions of the whole calculator are set only with the size of the buttons */
-    width: 80px;
-    height: 70px;
+#equals {
+    border-bottom-right-radius: 10px;
 }
 
 #zero {
     width: auto;
     grid-column: span 2;
+    border-bottom-left-radius: 10px;
 }
 
 button:hover {
-    background-color: rgb(159, 159, 159);
+    background-color: rgba(136, 136, 136, 0.1);
     cursor: pointer;
 }
 
@@ -57,7 +79,12 @@ button:hover {
 
 .credits {
     font-size: 13px;
-    margin-bottom: -15vh; /* not pretty */
+    margin-bottom: -10vh; /* not pretty */
+}
+
+a {
+    color: var(--char-color);
+    font-size: 12px;
 }
 
 
