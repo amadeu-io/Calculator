@@ -1,6 +1,6 @@
 Calculator web app ➗
 
-<a href='https://nightrunner4.github.io/Calculator'>👉 Click here to see</a>
+<a href='https://amadeu-io.github.io/Calculator'>👉 Click here to see</a>
 
 Las project of the foundations of The Odin Project. This app is currently being developed.
 
@@ -9,12 +9,6 @@ optimisation.
 
 <b>Potential Improvements:</b> 💪
 
- - Keyboard support
- - Optimise code
- - Mobile compatibility
-
-<b>Found Bugs:</b> 🪲
-
-
-
-by nightrunner4
+- Keyboard support
+- Optimise code
+- Mobile compatibility
