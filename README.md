@@ -1,6 +1,6 @@
 Calculator web app ➗
 
-<a href='https://amadeu-io.github.io/Calculator'>👉 Click here to see</a>
+<a href='https://amadeuio.github.io/Calculator'>👉 Click here to see</a>
 
 Las project of the foundations of The Odin Project. This app is currently being developed.
 
